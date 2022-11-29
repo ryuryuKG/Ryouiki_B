@@ -8,11 +8,6 @@ def car_create(x_l,y_l,size,collar):
     canvas.create_rectangle(5*size+x_l, 20*size+y_l, 35*size+x_l, 30*size+y_l, fill=collar)
     canvas.create_oval(10*size+x_l, 30*size+y_l, 15*size+x_l, 35*size+y_l, fill="black")
     canvas.create_oval(25*size+x_l, 30*size+y_l, 30*size+x_l, 35*size+y_l, fill="black")
-def car_delete(x_l,y_l,size):
-    canvas.create_rectangle(10*size+x_l, 10*size+y_l, 30*size+x_l, 20*size+y_l, fill="white")
-    canvas.create_rectangle(5*size+x_l, 20*size+y_l, 35*size+x_l, 30*size+y_l, fill="white")
-    canvas.create_oval(10*size+x_l, 30*size+y_l, 15*size+x_l, 35*size+y_l, fill="white")
-    canvas.create_oval(25*size+x_l, 30*size+y_l, 30*size+x_l, 35*size+y_l, fill="white")
 for i in range(10):
     num=0
     for j in range(10):
@@ -27,6 +22,4 @@ for i in range(10):
             else:
                 car_create(50 * j, 50 * i, 1, "red")
         num=num+1
-val =input()
-car_delete(50 * int(str(abs(i))[-2]), 50 * int(str(abs(i))[-1]), 1)
 root.mainloop()
