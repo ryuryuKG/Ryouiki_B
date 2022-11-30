@@ -29,7 +29,7 @@ def id_input(event):
     canvas.delete("all")
     for i in range(len(car_l)):
         car_create(car_l[i].x_l, car_l[i].y_l, car_l[i].size, car_l[i].color)
-    root.update()
+    #root.update()
 
 root = tk.Tk()
 root.geometry("600x600")
