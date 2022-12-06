@@ -52,4 +52,3 @@ while True:
     root.bind('<Key-d>', d_move)
     time.sleep(0.02)
     root.update()
-root.mainloop()

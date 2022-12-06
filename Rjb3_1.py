@@ -44,4 +44,3 @@ while True:
         count=0
     time.sleep(0.02)
     root.update()
-root.mainloop()
