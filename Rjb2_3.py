@@ -22,13 +22,17 @@ def car_del(x_l, y_l, size, color):
 
 def id_input(event):
     id_num = input("idを入力してください:")
-    for j in range(len(car_l)):
-        if(int(car_l[j].id)==int(id_num)):
-            del car_l[int(j)]
-            break
-    canvas.delete("all")
-    for i in range(len(car_l)):
-        car_create(car_l[i].x_l, car_l[i].y_l, car_l[i].size, car_l[i].color)
+    if int(id_num)>=0 and int(id_num)<100:
+        for j in range(len(car_l)):
+            if (int(car_l[j].id) == int(id_num)):
+                del car_l[int(j)]
+                break
+        canvas.delete("all")
+        for i in range(len(car_l)):
+            car_create(car_l[i].x_l, car_l[i].y_l, car_l[i].size, car_l[i].color)
+    else:
+        print("0から99までの数値を入力してください")
+        return id_input(event)
     #root.update()
 
 root = tk.Tk()
