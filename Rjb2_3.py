@@ -1,5 +1,5 @@
 import tkinter as tk
-
+import time
 class Car:
     def __init__(self,id, x_l, y_l,size,color):
         self.id=id
@@ -20,8 +20,7 @@ def car_del(x_l, y_l, size, color):
     canvas.delete(canvas.create_oval(10 * size + x_l, 30 * size + y_l, 15 * size + x_l, 35 * size + y_l, fill="black"))
     canvas.delete(canvas.create_oval(25 * size + x_l, 30 * size + y_l, 30 * size + x_l, 35 * size + y_l, fill="black"))
 
-def id_input(event):
-    id_num = input("idを入力してください:")
+def id_input(id_num):
     if int(id_num)>=0 and int(id_num)<100:
         for j in range(len(car_l)):
             if (int(car_l[j].id) == int(id_num)):
@@ -32,9 +31,8 @@ def id_input(event):
             car_create(car_l[i].x_l, car_l[i].y_l, car_l[i].size, car_l[i].color)
     else:
         print("0から99までの数値を入力してください")
-        return id_input(event)
-    #root.update()
-
+        #return id_input(input("idを入力してください:"))
+_input=False
 root = tk.Tk()
 root.geometry("600x600")
 canvas = tk.Canvas(root, background="#fff", width=600, height=600)
@@ -60,6 +58,9 @@ for i in range(10):
 
 for i in range(len(car_l)):
     car_create(car_l[i].x_l, car_l[i].y_l, car_l[i].size, car_l[i].color)
-root.bind('<Button-1>',id_input)
-
-root.mainloop()
+while True:
+    root.update()
+    time.sleep(0.02)
+    _id=input("idを入力してください:")
+    if bool(_id):
+        id_input(_id)
